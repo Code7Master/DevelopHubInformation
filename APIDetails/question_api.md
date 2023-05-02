@@ -26,7 +26,7 @@
 
 ### Request
 ```url
-/question/preview/{idx}
+/question/preview?question_idx={idx}
 ```
 
 ### Response 
@@ -62,7 +62,7 @@
 
 ### Request
 ```url
-/question/detail/{idx}
+/question/detail?question_idx={idx}
 ```
 
 ### Response
