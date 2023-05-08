@@ -13,10 +13,8 @@
 
 [ *SUCCESS* ] HTTP Status **200**
 
-```json
-{
-    "total_question_count": (질문의 모든 갯수)
-}
+```url
+GET "total_question_count": (질문의 모든 갯수)
 ```
 
 ---
@@ -26,7 +24,7 @@
 
 ### Request
 ```url
-/question/preview?question_idx={idx}
+GET /question/preview?question_idx={idx}
 ```
 
 ### Response 
@@ -62,7 +60,7 @@
 
 ### Request
 ```url
-/question/detail?question_idx={idx}
+GET  /question/detail?question_idx={idx}
 ```
 
 ### Response
@@ -94,3 +92,38 @@
   "vote_count":   0
 }
 ```
+
+---
+
+### 질문 하기 [  *POST*  ]
+질문을 등록합니다. 
+
+### Request 
+```url
+POST  /question/ask
+```
+```json
+{
+  "writer":       "사용자이름",
+  "title":        "질문 제목",
+  "content":      "질문 내용",
+}
+```
+
+### Response
+[ *SUCCESS* ] HTTP Status **200**
+```json
+{
+  "status": 200,
+  "message": "success question ask"
+}
+```
+
+[ *FAIL* ] HTTP Status **422**
+```json
+{
+  "status": 422,
+  "message": "parsing error"
+}
+```
+
